@@ -7,7 +7,8 @@ module.exports = {
     name: 'yukino',
     description: "Praise Yukino!",
     execute(message, args){
-        message.channel.send({ to: channelID,
+        message.channel.send({
+            to: channelID,
             message: replies[random]})
     }
 }
