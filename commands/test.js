@@ -1,5 +1,5 @@
 const random = ["hi", "hello", "world"]
-const randomMsg = random[Math.floor(Math.random() * random.length) + 1];
+const randomMessage = random[Math.floor(Math.random() * messages.length)];
 
 console.log(randomMessage)
 
