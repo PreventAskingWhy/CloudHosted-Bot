@@ -37,8 +37,8 @@ client.on('message', message =>{
         client.commands.get('salt').execute(message, args);
     }else if(command === 'tea'){
         client.commands.get('tea').execute(message, args);
-    }else if(command === 'test'){
-        client.commands.get('test').execute(message, args);
+    }else if(command === 'yukino'){
+        client.commands.get('yukino').execute(message, args);
     }
 });
 
