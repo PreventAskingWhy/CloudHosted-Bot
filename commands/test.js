@@ -1,8 +1,5 @@
-const { description } = require("./tea");
-
-const messages = ["message one", "message two", "message three", "message four"]
-
-const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+const random = ["hi", "hello", "world"]
+const randomMsg = random[Math.floor(Math.random() * random.length) + 1];
 
 console.log(randomMessage)
 
@@ -10,6 +7,6 @@ module.exports = {
     name: 'test',
     description: "test",
     execute(message, args){
-        message.channel.send(randomMessage)
+        message.channel.send(`${randomMsg}`)
     }
 }
