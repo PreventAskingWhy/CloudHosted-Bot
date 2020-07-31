@@ -41,5 +41,3 @@ client.on('message', message =>{
 });
 
 client.login('process.env.token');
-
-require("http").createServer(async (req,res) => { res.statusCode = 200; res.write("ok"); res.end(); }).listen(3000, () => console.log("Now listening on port 3000"));
