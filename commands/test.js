@@ -1,7 +1,7 @@
 const random = ["hi", "hello", "world"]
 const randomMsg = random[Math.floor(Math.random() * random.length) + 1];
 
-console.log(randomMessage)
+console.log('${randomMsg')
 
 module.exports = {
     name: 'test',
