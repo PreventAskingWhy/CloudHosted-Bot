@@ -50,40 +50,11 @@ client.on('message', message =>{
     }
 });
 
-var emojiname = [":chizu:739077537824637001"],
-    rolename = ["739076195609477130"];
-
-client.on("ready", () => {
-    console.log(`Logged in as ${client.user.tag}`)
-});
-
-client.on("message", e => {
-    if (e.content.startsWith(prefix + "reaction")) {
-        if (!e.channel.guild) return;
-        for (let o in emojiname) {
-            var n = [e.guild.emojis.find(e => e.name == emojiname[o])];
-            for (let o in n) e.react(n[o])
-        }
-    }
-});
-
-client.on("messageReactionAdd", (e, n) => {
-    if (n && !n.bot && e.message.channel.guild)
-        for (let o in emojiname)
-            if (e.emoji.name == emojiname[o]) {
-                let i = e.message.guild.roles.find(e => e.name == rolename[o]);
-                e.message.guild.member(n).addRole(i).catch(console.error)
-            }
-});
-
-client.on("messageReactionRemove", (e, n) => {
-    if (n && !n.bot && e.message.channel.guild)
-        for (let o in emojiname)
-            if (e.emoji.name == emojiname[o]) {
-                let i = e.message.guild.roles.find(e => e.name == rolename[o]);
-                e.message.guild.member(n).removeRole(i).catch(console.error)
-            }
-});
-
+client.reactionRoleManager.create({
+    messageID: '720182999009722379',
+    channel: message.channel,
+    reaction: ':chizu:739077537824637001',
+    role: message.guild.roles.cache.get('739076195609477130')
+})
 
 client.login(process.env.token);
