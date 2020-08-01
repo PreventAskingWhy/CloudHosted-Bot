@@ -50,4 +50,19 @@ client.on('message', message =>{
     }
 });
 
+[
+    {
+      "messageId": "720182999009722379",
+      "channelId": "720171619414310953",
+      "isUnique": false,
+      "emojiRoleMap": {
+        ":chizu:739077537824637001": ["739076195609477130"],
+        "EMOJI_2": ["ROLE_2_ID"],
+        "EMOJI_3": ["ROLE_3_ID", "ROLE_4_ID"],
+        // ...Add as many emoji-role mappings as you want.
+      }
+    },
+    // ...Add as many rules as you want.
+  ]
+
 client.login(process.env.token);
