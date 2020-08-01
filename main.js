@@ -47,6 +47,8 @@ client.on('message', message =>{
         client.commands.get('goodwaifu').execute(message, args);
     }else if(command === 'chizuru'){
         client.commands.get('chizuru').execute(message, args);
+    }else if(command === 'quotes'){
+        client.commands.get('quotes').execute(message, args);
     }
 });
 
