@@ -50,11 +50,4 @@ client.on('message', message =>{
     }
 });
 
-client.reactionRoleManager.create({
-    messageID: '720182999009722379',
-    channel: message.channel,
-    reaction: ':chizu:739077537824637001',
-    role: message.guild.roles.cache.get('739076195609477130')
-})
-
 client.login(process.env.token);
