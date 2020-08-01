@@ -56,7 +56,7 @@ client.on('message', message =>{
       "channelId": "720171619414310953",
       "isUnique": false,
       "emojiRoleMap": {
-        ":chizu:739077537824637001": ["739076195609477130"],
+        ":chizu:739077537824637001": ["739076195609477130"]
       }
     }
   ]
