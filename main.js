@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client();
+const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION']});
 
 const prefix = '!';
 
@@ -49,5 +49,11 @@ client.on('message', message =>{
         client.commands.get('chizuru').execute(message, args);
     }
 });
+
+client.on('messageReactionAdd', async (reaction, user) => {
+    if(reaction.message.partial) {
+        console.log("A user reacted to an unchached message")
+    }
+})
 
 client.login(process.env.token);
