@@ -51,7 +51,7 @@ client.on('message', message =>{
 });
 
 var emojiname = [":chizu:739077537824637001"],
-    rolename = ["@&739076195609477130"];
+    rolename = ["&739076195609477130"];
 
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`)
