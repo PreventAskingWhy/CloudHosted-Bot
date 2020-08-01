@@ -39,6 +39,8 @@ client.on('message', message =>{
         client.commands.get('tea').execute(message, args);
     }else if(command === 'yukino'){
         client.commands.get('yukino').execute(message, args);
+    }else if(command === 'maisan'){
+        client.commands.get('maisan').execute(message, args);
     }
 });
 
