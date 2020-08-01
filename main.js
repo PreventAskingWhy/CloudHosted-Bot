@@ -41,6 +41,8 @@ client.on('message', message =>{
         client.commands.get('yukino').execute(message, args);
     }else if(command === 'maisan'){
         client.commands.get('maisan').execute(message, args);
+    }else if(command === 'prayer'){
+        client.commands.get('prayer').execute(message, args);
     }
 });
 
