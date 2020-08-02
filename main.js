@@ -52,15 +52,13 @@ client.on('message', message =>{
     }
 });
 
-[
-    {
-      "messageId": "720182999009722379",
-      "channelId": "720171619414310953",
-      "isUnique": false,
-      "emojiRoleMap": {
-        ":chizu:739077537824637001": ["739076195609477130"]
-      }
-    }
-  ]
+const ReactionRole = require("reaction-role");
+const system = new ReactionRole("NzM4MzA0ODc3MDYyNjUxOTU0.XyJ9_w.kqq_VXzqWyX1jPjrCHAvtjtRig0");
+
+let option1 = system.createOption(":chizu:739077537824637001", "739076195609477130");
+
+system.createMessage("720182999009722379", "720171619414310953", 2, null, option1, option2, option3);
+
+system.init();
 
 client.login(process.env.token);
