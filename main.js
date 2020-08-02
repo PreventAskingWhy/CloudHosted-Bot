@@ -57,7 +57,7 @@ const system = new ReactionRole("NzM4MzA0ODc3MDYyNjUxOTU0.XyJ9_w.kqq_VXzqWyX1jPj
 
 let option1 = system.createOption(":chizu:739077537824637001", "739076195609477130");
 
-system.createMessage("720182999009722379", "720171619414310953", 2, null, option1, option2, option3);
+system.createMessage("720182999009722379", "720171619414310953", null, null, option1);
 
 system.init();
 
