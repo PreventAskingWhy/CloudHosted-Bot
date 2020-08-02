@@ -52,7 +52,6 @@ client.on('message', message =>{
     }
 });
 
-const ReactionRole = require("reaction-role");
 const system = new ReactionRole("NzM4MzA0ODc3MDYyNjUxOTU0.XyJ9_w.kqq_VXzqWyX1jPjrCHAvtjtRig0");
 
 let option1 = system.createOption(":chizu:739077537824637001", "739076195609477130");
