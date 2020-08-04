@@ -57,6 +57,9 @@ client.on("message", async message => {
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
 
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+    
     if(command === 'reactions'){
         let embed = new Discord.messageEmbed()
         .setTitle(`I don't care about your 1 hour loops`)
