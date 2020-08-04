@@ -53,7 +53,7 @@ client.on('message', message =>{
 });
 
 client.on("message", async message => {
-    letprefix = botsettings.prefix
+    letprefix = clientsettings.prefix
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
 
