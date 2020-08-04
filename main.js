@@ -52,18 +52,21 @@ client.on('message', message =>{
     }
 });
 
-letprefix = botsettings.prefix
-let messageArray = message.content.split(" ")
-let cmd = messageArray[0];
+client.on("message", async message => {
+    letprefix = botsettings.prefix
+    let messageArray = message.content.split(" ")
+    let cmd = messageArray[0];
 
-if(cmd === `${prefix}`){
-    let embed = new Discord.messageEmbed()
-    .setTitle('Reaction Roles')
-    .setDescription('react to get rolesss')
-    .setColor('BLUE')
-    let msgEmbed = await message.channel.send(embed).
-    msgEmbed.react(':mykindoflaughter:516969346833055768')
-}
+    if(cmd === `${prefix}`){
+        let embed = new Discord.messageEmbed()
+        .setTitle(`I don't care about your 1 hour loops`)
+        .setDescription('react if you dont care about my 1 hour loops')
+        .setColor('BLUE')
+        let msgEmbed = await message.channel.send(embed).
+        msgEmbed.react(':mykindoflaughter:516969346833055768')
+    }
+
+})
 
 
 client.login(process.env.token);
