@@ -52,24 +52,6 @@ client.on('message', message =>{
     }
 });
 
-client.on("message", async message => {
-    if(message.author.bot || message.channel.type === "dm") return;
-    let messageArray = message.content.split(" ")
-    let cmd = messageArray[0];
-
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLowerCase();
-    
-    if(command === 'reactions'){
-        let embed = new Discord.messageEmbed()
-        .setTitle(`I don't care about your 1 hour loops`)
-        .setDescription('react if you dont care about my 1 hour loops')
-        .setColor('BLUE')
-        let msgEmbed = await message.channel.send(embed).
-        msgEmbed.react(':mykindoflaughter:516969346833055768')
-    }
-
-})
 
 
 client.login(process.env.token);
