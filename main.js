@@ -54,7 +54,6 @@ client.on('message', message =>{
 
 client.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
-    let prefix = botsettings.prefix;
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
 
