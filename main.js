@@ -54,11 +54,10 @@ client.on('message', message =>{
 
 client.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
-    let prefix = clientsettings.prefix;
     let messageArray = message.content.split(" ")
     let cmd = messageArray[0];
 
-    if(cmd === `${prefix}`){
+    if(command === 'reactions'){
         let embed = new Discord.messageEmbed()
         .setTitle(`I don't care about your 1 hour loops`)
         .setDescription('react if you dont care about my 1 hour loops')
