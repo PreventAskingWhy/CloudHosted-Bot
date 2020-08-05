@@ -49,6 +49,8 @@ client.on('message', message =>{
         client.commands.get('chizuru').execute(message, args);
     }else if(command === 'quotes'){
         client.commands.get('quotes').execute(message, args);
+    }else if(command === 'boop'){
+        client.commands.get('boop').execute(message, args);
     }
 });
 
