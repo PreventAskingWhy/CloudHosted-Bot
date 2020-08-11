@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const client = new Discord.Client({ partials: ['MESSAGE', 'REACTION']});
+const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 const prefix = '!';
 
@@ -64,11 +64,17 @@ client.on("message", async message => {
     if(cmd === `${prefix}reactions`){
         let embed = new Discord.MessageEmbed()
         .setTitle('Reaction Roles')
-        .setDescription('React to gain the role!')
+        .setDescription('React to not see any weeb or anime things')
         .setColor('BLUE')
         let msgEmbed = await message.channel.send(embed)
         msgEmbed.react(':wewin:687298611352043552')
     }
 })
+
+client.on("messageReactionAdd", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+
+})
+
 
 client.login(process.env.token);
