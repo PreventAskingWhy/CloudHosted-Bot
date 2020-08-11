@@ -62,7 +62,7 @@ client.on("message", async message => {
     let cmd = messageArray[0];
 
     if(cmd === `${prefix}reactions`){
-        let embed = new Discord.MessageEmbed
+        let embed = new Discord.MessageEmbed()
         .setTitle('Reaction Roles')
         .setDescription('React to gain the role!')
         .setColor('GREEN')
