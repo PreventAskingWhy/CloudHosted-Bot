@@ -54,6 +54,21 @@ client.on('message', message =>{
     }
 });
 
+client.on("message", async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+    
+    let prefix = botsettings.prefix
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
 
+    if(cmd === `${prefix}reactions`){
+        let embed = new Discord.MessageEmbed
+        .setTitle('Reaction Roles')
+        .setDescription('React to gain the role!')
+        .setColor('GREEN')
+        let msgEmbed = await message.channel.send(embed).
+        msgEmbed.react(':wewin:687298611352043552')
+    }
+})
 
 client.login(process.env.token);
