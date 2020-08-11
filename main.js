@@ -65,8 +65,8 @@ client.on("message", async message => {
         let embed = new Discord.MessageEmbed()
         .setTitle('Reaction Roles')
         .setDescription('React to gain the role!')
-        .setColor('GREEN')
-        let msgEmbed = await message.channel.send(embed).
+        .setColor('BLUE')
+        let msgEmbed = await message.channel.send(embed)
         msgEmbed.react(':wewin:687298611352043552')
     }
 })
