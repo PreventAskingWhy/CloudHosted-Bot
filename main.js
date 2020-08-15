@@ -1,8 +1,12 @@
 const Discord = require('discord.js');
+const jsonfile = require('jsonfile');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 var stats = {};
+if (fs.existsSync('stats.json')) {
+    stats = jsonfile.readFileSync('stats.json');
+}
 
 const prefix = '!';
 
@@ -59,6 +63,7 @@ client.on('message', message =>{
         //message.channel.send();
     }
 
+    jsonfile.writeFileSync('stats.json', stats);
 
     console.log(message.author + ' now has ' + userStats.xp)
     console.log(xpToNextLevel + ' XP needed to next level. ');
