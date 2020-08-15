@@ -52,7 +52,10 @@ client.on('message', message =>{
     const userStats = guildStats[message.author.id];
     userStats.xp += getRandomInt(15, 25);
 
+    const xpToNextLevel = 5 * Math.pow(userStats.level, 2) + 50 * userStats.level + 100; 
+
     console.log(message.author + ' now has ' + userStats.xp)
+    console.log(xpToNextLevel + ' XP needed to next level. ');
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
