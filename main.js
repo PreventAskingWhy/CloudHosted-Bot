@@ -31,6 +31,12 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+    
     if (message.guild.id in stats === false) {
         stats[message.guild.id] = {};
     }
@@ -45,7 +51,7 @@ client.on('message', message =>{
     }
 
     const userStats = stats[message.author.id];
-    userStats.xp += random.int(15, 25);
+    userStats.xp += getRandomInt(15, 25);
 
     console.log(message.author + ' now has ' + userStats.xp)
 
