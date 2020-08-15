@@ -60,7 +60,7 @@ client.on('message', message =>{
     if (userStats.xp >= xpToNextLevel) {
         userStats.level++;
         userStats.xp = userStats.xp - xpToNextLevel;
-        //message.channel.send();
+        message.channel.send(gg);
     }
 
     //jsonfile.writeFileSync('stats.json', stats);
