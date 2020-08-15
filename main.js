@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
+const random = require('random');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
+
+var stats = {};
 
 const prefix = '!';
 
@@ -28,6 +31,24 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
+    if (message.guild.id in stats === false) {
+        stats[message.guild.id] = {};
+    }
+    
+    const guildStats = stats[message.guild.id];
+    if (message.author.id in guildStats === false){
+        stats[message.author.id] = {
+            xp: 0,
+            level: 0,
+            last_message: 0
+        };
+    }
+
+    const userStats = stats[message.author.id];
+    userStats.xp += random.int(15, 25);
+
+    console.log(message.author + ' now has ' + userStats.xp)
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
