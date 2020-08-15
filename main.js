@@ -36,7 +36,7 @@ client.on('message', message =>{
     
     const guildStats = stats[message.guild.id];
     if (message.author.id in guildStats === false){
-        stats[message.author.id] = {
+        guildStats[message.author.id] = {
             xp: 0,
             level: 0,
             last_message: 0
@@ -49,7 +49,7 @@ client.on('message', message =>{
         return Math.floor(Math.random() * (max - min)) + min;
       }
 
-    const userStats = stats[message.author.id];
+    const userStats = guildStats[message.author.id];
     userStats.xp += getRandomInt(15, 25);
 
     console.log(message.author + ' now has ' + userStats.xp)
