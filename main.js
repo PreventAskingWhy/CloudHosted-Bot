@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const random = require('random');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
@@ -31,12 +30,6 @@ client.once('ready', () => {
 });
 
 client.on('message', message =>{
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
-      }
-    
     if (message.guild.id in stats === false) {
         stats[message.guild.id] = {};
     }
@@ -49,6 +42,12 @@ client.on('message', message =>{
             last_message: 0
         };
     }
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
 
     const userStats = stats[message.author.id];
     userStats.xp += getRandomInt(15, 25);
