@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-const jsonfile = require('jsonfile');
+//const jsonfile = require('jsonfile');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
 var stats = {};
-if (fs.existsSync('stats.json')) {
-    stats = jsonfile.readFileSync('stats.json');
-}
+//if (fs.existsSync('stats.json')) {
+    //stats = jsonfile.readFileSync('stats.json');
+//}
 
 const prefix = '!';
 
