@@ -63,7 +63,7 @@ client.on('message', message =>{
         //message.channel.send();
     }
 
-    jsonfile.writeFileSync('stats.json', stats);
+    //jsonfile.writeFileSync('stats.json', stats);
 
     console.log(message.author + ' now has ' + userStats.xp)
     console.log(xpToNextLevel + ' XP needed to next level. ');
