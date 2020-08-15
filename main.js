@@ -53,6 +53,12 @@ client.on('message', message =>{
     userStats.xp += getRandomInt(15, 25);
 
     const xpToNextLevel = 5 * Math.pow(userStats.level, 2) + 50 * userStats.level + 100; 
+    if (userStats.xp >= xpToNextLevel) {
+        userStats.level++;
+        userStats.xp = userStats.xp - xpToNextLevel;
+        message.channel.send();
+    }
+
 
     console.log(message.author + ' now has ' + userStats.xp)
     console.log(xpToNextLevel + ' XP needed to next level. ');
