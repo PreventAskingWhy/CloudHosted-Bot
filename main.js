@@ -10,7 +10,6 @@ if (fs.existsSync('stats.json')) {
 
 const prefix = '!';
 
-const fs = require('fs');
  
 client.commands = new Discord.Collection();
  
