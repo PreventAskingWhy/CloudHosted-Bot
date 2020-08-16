@@ -1,13 +1,9 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-//const jsonfile = require('jsonfile');
+const jsonfile = require('jsonfile');
 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']});
 
-var stats = {};
-//if (fs.existsSync('stats.json')) {
-    //stats = jsonfile.readFileSync('stats.json');
-//}
 
 const prefix = '!';
 
@@ -33,7 +29,15 @@ client.once('ready', () => {
     console.log('Mai is online!');
 });
 
+var stats = {};
+if (fs.existsSync('stats.json')) {
+    stats = jsonfile.readFileSync('stats.json');
+}
+
 client.on('message', message =>{
+    if (message.author.id == bot.user.id)
+        return;
+   
     if (message.guild.id in stats === false) {
         stats[message.guild.id] = {};
     }
@@ -63,7 +67,7 @@ client.on('message', message =>{
         //message.channel.send(gg);
     }
 
-    //jsonfile.writeFileSync('stats.json', stats);
+    jsonfile.writeFileSync('stats.json', stats);
 
     console.log(message.author + ' now has ' + userStats.xp)
     console.log(xpToNextLevel + ' XP needed to next level. ');
