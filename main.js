@@ -29,12 +29,15 @@ client.once('ready', () => {
     console.log('Mai is online!');
 });
 
-//var stats = {};
+var stats = {};
 //if (fs.existsSync('stats.json')) {
     //stats = jsonfile.readFileSync('stats.json');
 //}
 
 client.on('message', message =>{
+    if (message.author.id == client.user.id)
+        return;
+
     if (message.guild.id in stats === false) {
         stats[message.guild.id] = {};
     }
