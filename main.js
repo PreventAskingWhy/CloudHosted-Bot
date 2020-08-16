@@ -35,9 +35,6 @@ client.once('ready', () => {
 //}
 
 client.on('message', message =>{
-    if (message.author.id == bot.user.id)
-        return;
-   
     if (message.guild.id in stats === false) {
         stats[message.guild.id] = {};
     }
