@@ -15,7 +15,8 @@ client.on("guildMemberAdd", member => {
         .setTitle("Welcomeee")
         .setDescription(`yooo ${member} just joinedd`)
         .setColor("1f2bad")
-        .setThumbnail("https://cdn.discordapp.com/attachments/738227191828971632/738367316873445446/welcome.png")
+        .addField("", "Make sure to check #rules-and-info and #roles")
+        .setImage("https://cdn.discordapp.com/attachments/738227191828971632/738367316873445446/welcome.png")
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send({embed});
     
