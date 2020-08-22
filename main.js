@@ -15,12 +15,13 @@ client.on("guildMemberAdd", member => {
         .setTitle("Welcomeee")
         .setDescription(`yooo ${member} just joinedd`)
         .setColor("1f2bad")
-        .addField("Reminder", "Make sure to check" + channel.id(515891269717852163)  + " and" + channel.id(720171619414310953))
+        .addField("Reminder", "Make sure to check #rules-and-info and #roles")
         .setImage("https://cdn.discordapp.com/attachments/738227191828971632/738367316873445446/welcome.png")
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
     welcomeChannel.send({embed});
     
 })
+
 
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
