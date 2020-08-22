@@ -12,8 +12,11 @@ client.commands = new Discord.Collection();
  
 client.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
-    welcomeChannel.send (`yooo welcome, ${member} to the official DontAskWhy serverr pls check #rules-and-info and #roles.
-    https://cdn.discordapp.com/attachments/738227191828971632/738367316873445446/welcome.png`)
+    welcomeChannel.send({embed: {
+        color: 3447003,
+        description: "A very simple Embed!"
+      }});
+      
     
 })
 
