@@ -10,14 +10,11 @@ const prefix = '!';
  
 client.commands = new Discord.Collection();
  
-client.on('guildMemberAdd', member => {
-    const exampleEmbed = new Discord.RichEmbed()
-        .setColor('#0099ff')
-        .setTitle('Welcome')
-        .addField('', member.nickname)
-        .setImage(member.user.avatarURL)
-
-    member.guild.channels.get('605000838573850635').send(exampleEmbed);
+client.on("guildMemberAdd", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
+    welcomeChannel.send (`yooo welcome, ${member} to the official DontAskWhy serverr pls check #rules-and-info and #roles.
+    https://cdn.discordapp.com/attachments/738227191828971632/738367316873445446/welcome.png`)
+    
 })
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
