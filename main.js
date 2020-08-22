@@ -102,8 +102,8 @@ client.on('message', message =>{
         client.commands.get('quotes').execute(message, args);
     }else if(command === 'boop'){
         client.commands.get('boop').execute(message, args);
-    }else if(command === 'help'){
-        client.commands.get('help').execute(message, args);
+    }else if(command === 'commands'){
+        client.commands.get('commands').execute(message, args);
     }
 });
 
