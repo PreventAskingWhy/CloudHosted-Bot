@@ -138,5 +138,5 @@ client.on("messageReactionAdd", async (reaction, user) => {
 })
 
 
-client.login('NzM4MzA0ODc3MDYyNjUxOTU0.XyJ9_w.kqq_VXzqWyX1jPjrCHAvtjtRig0');
+client.login(DISCORD_BOT_TOKEN);
 
